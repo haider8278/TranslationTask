@@ -24,7 +24,7 @@ This is a Translation Management API built with Laravel 10, designed for storing
 1. Clone the repository:
    ```sh
    git clone https://github.com/haider8278/TranslationTask
-   cd translation-service
+   cd TranslationTask
    ```
 
 Copy environment variables:
