@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TranslationController;
@@ -23,17 +24,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
-Route::post('/login', function (Request $request) {
-    $user = User::where('email', $request->email)->first();
-
-    if (! $user || ! Hash::check($request->password, $user->password)) {
-        return response()->json(['message' => 'Invalid credentials'], 401);
-    }
-
-    return response()->json(['token' => $user->createToken('api-token')->plainTextToken]);
-});
-
+Route::post('/login', [LoginController::class, 'login']);
 
 
 Route::middleware('auth:sanctum')->group(function () {

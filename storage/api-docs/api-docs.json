@@ -15,7 +15,7 @@
                     "Authentication"
                 ],
                 "summary": "Create a Auth Token",
-                "operationId": "8c7cb526928e8104986931855ef24f87",
+                "operationId": "c5e838284c7f343f0e5e5fd589161c96",
                 "requestBody": {
                     "required": true,
                     "content": {
@@ -50,7 +50,8 @@
                     "401": {
                         "description": "Unauthorized"
                     }
-                }
+                },
+                "security": []
             }
         },
         "/api/translations": {
@@ -91,7 +92,7 @@
                 },
                 "security": [
                     {
-                        "bearerAuth": []
+                        "0": "sanctum"
                     }
                 ]
             },
@@ -265,5 +266,15 @@
             "name": "Translations",
             "description": "Endpoints for managing translations"
         }
-    ]
+    ],
+    "components": {
+        "securitySchemes": {
+            "sanctum": {
+                "type": "apiKey",
+                "description": "Enter token in format (Bearer <token>)",
+                "name": "Authorization",
+                "in": "query"
+            }
+        }
+    }
 }

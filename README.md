@@ -68,3 +68,6 @@ Get API token:
 ```sh
 curl -X POST -d "email=admin@example.com&password=password" http://localhost:8000/api/login
 ```
+
+### Swagger API Documentation
+The API documentation is available at `http://localhost:8000/api/documentation`

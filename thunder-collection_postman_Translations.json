@@ -1,0 +1,120 @@
+{
+    "info": {
+        "_postman_id": "c8bec3d9-1777-4423-ae10-b25297b3167a",
+        "name": "Translations",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "List",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8000/api/translations",
+                    "path": [
+                        "api",
+                        "translations"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000"
+                }
+            }
+        },
+        {
+            "name": "Update",
+            "request": {
+                "method": "PUT",
+                "url": {
+                    "raw": "http://localhost:8000/api/translations/1",
+                    "path": [
+                        "api",
+                        "translations",
+                        "1"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000"
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"local\": \"en\",\n  \"key\": \"test\",\n  \"content\": \"this is test content\"\n}"
+                }
+            }
+        },
+        {
+            "name": "Create",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "http://localhost:8000/api/translations",
+                    "path": [
+                        "api",
+                        "translations"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000"
+                },
+                "body": {
+                    "mode": "urlencoded",
+                    "urlencoded": [
+                        {
+                            "key": "locale",
+                            "value": "en"
+                        },
+                        {
+                            "key": "key",
+                            "value": "test3"
+                        },
+                        {
+                            "key": "content",
+                            "value": "test content3"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Delete",
+            "request": {
+                "method": "DELETE",
+                "url": {
+                    "raw": "http://localhost:8000/api/translations/2",
+                    "path": [
+                        "api",
+                        "translations",
+                        "2"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000"
+                }
+            }
+        }
+    ],
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "token",
+                "value": "6|sDQxY6Wjr8oKJ39sVoEftu6Uz4tGHIUdvXCfsYpf63ac63c4",
+                "type": "string"
+            }
+        ]
+    }
+}

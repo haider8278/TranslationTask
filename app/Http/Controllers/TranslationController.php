@@ -36,7 +36,7 @@ class TranslationController extends Controller
      *      tags={"Translations"},
      *      summary="Retrieve a list of translations",
      *      description="Returns a paginated list of translations with optional filters.",
-     *      security={{ "bearerAuth": {} }},
+     *      security={{ "sanctum" }},
      *      @OA\Parameter(
      *          name="locale",
      *          in="query",

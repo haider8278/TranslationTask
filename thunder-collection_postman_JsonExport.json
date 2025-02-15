@@ -1,0 +1,29 @@
+{
+    "info": {
+        "_postman_id": "7c581a6a-7958-46aa-ab45-7294e6b725c2",
+        "name": "JsonExport",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "Export Translations",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:8000/api/translations/json-export",
+                    "path": [
+                        "api",
+                        "translations",
+                        "json-export"
+                    ],
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000"
+                }
+            }
+        }
+    ]
+}

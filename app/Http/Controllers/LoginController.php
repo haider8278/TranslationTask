@@ -21,6 +21,7 @@ class LoginController extends Controller
      *      path="/api/login",
      *      tags={"Authentication"},
      *      summary="Create a Auth Token",
+     * security={},
      *      @OA\RequestBody(
      *          required=true,
      *          @OA\JsonContent(
@@ -34,14 +35,14 @@ class LoginController extends Controller
      *      @OA\Response(response=401, description="Unauthorized")
      * )
      */
-    public function store(Request $request): JsonResponse
+    public function login(Request $request): JsonResponse
     {
-        $data = $request->validate([
-            'locale' => 'required|string',
-            'key' => 'required|string|unique:translations,key',
-            'content' => 'required|string'
-        ]);
+        $user = User::where('email', $request->email)->first();
 
-        return response()->json($this->translationRepository->create($data), 201);
+    if (! $user || ! Hash::check($request->password, $user->password)) {
+        return response()->json(['message' => 'Invalid credentials'], 401);
+    }
+
+    return response()->json(['token' => $user->createToken('api-token')->plainTextToken]);
     }
 }
